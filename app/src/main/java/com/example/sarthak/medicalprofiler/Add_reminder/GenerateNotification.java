@@ -41,6 +41,9 @@ public class GenerateNotification extends Service {
         if(intent!=null) {
             title = intent.getExtras().getString("title").toString();
             description = intent.getExtras().getString("description").toString() + intent.getExtras().getString("time").toString();
+            if(title==null || title.trim().equals("") || title.isEmpty()){
+                return 0;
+            }
         }
         notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 

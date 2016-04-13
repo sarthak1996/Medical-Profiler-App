@@ -71,15 +71,19 @@ public class Add_Reminder extends AppCompatActivity {
                 EditText editText = (EditText) findViewById(R.id.note_add_reminder);
                 enteredTitle = editText.getText().toString();
                 pickedTimeDate.setTitle(enteredTitle);
-                ReminderDatabaseObject reminderDatabaseObject=new ReminderDatabaseObject(pickedTimeDate.getTitle(),pickedTimeDate.getDescription(),
-                        ""+pickedTimeDate.getDate()+"/"+pickedTimeDate.getMonth()+";"+pickedTimeDate.getHour()+":"+pickedTimeDate.getMinute());
+                ReminderDatabaseObject reminderDatabaseObject = new ReminderDatabaseObject(pickedTimeDate.getTitle(), pickedTimeDate.getDescription(),
+                        "" + pickedTimeDate.getDate() + "/" + pickedTimeDate.getMonth() + ";" + pickedTimeDate.getHour() + ":" + pickedTimeDate.getMinute());
                 reminderDatabaseObject.save();
-                createAlarmForNotification();
+                if (enteredTitle == null || enteredTitle.equals("") || enteredTitle.isEmpty()) {
+                    Toast.makeText(Add_Reminder.this, "Please Enter title", Toast.LENGTH_SHORT).show();
+                } else {
+                    createAlarmForNotification();
+                }
             }
         });
 
 
-       listView = (ListView) findViewById(R.id.listView_date_time_selector);
+        listView = (ListView) findViewById(R.id.listView_date_time_selector);
         adapter_listview = new Add_reminder_adapter(this, images, description, label);
         listView.setAdapter(adapter_listview);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -177,8 +181,8 @@ public class Add_Reminder extends AppCompatActivity {
         CreateAlarm createAlarm = new CreateAlarm(this, pickedTimeDate);
         createAlarm.createAlarmToNotify();
         Intent returnIntent = new Intent();
-        returnIntent.putExtra("title",pickedTimeDate.getTitle());
-        returnIntent.putExtra("description",pickedTimeDate.getDescription());
+        returnIntent.putExtra("title", pickedTimeDate.getTitle());
+        returnIntent.putExtra("description", pickedTimeDate.getDescription());
         returnIntent.putExtra("date", "" + pickedTimeDate.getHour() + "/" + pickedTimeDate.getMinute());
         setResult(Activity.RESULT_OK, returnIntent);
         finish();

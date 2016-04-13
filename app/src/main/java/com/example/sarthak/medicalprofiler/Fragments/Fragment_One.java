@@ -26,7 +26,7 @@ public class Fragment_One extends Fragment {
     TextView textView4;
     TextView textView5;
     TextView textView6;
-
+    int select=0;
 
     public Fragment_One() {
     }
@@ -67,42 +67,42 @@ public class Fragment_One extends Fragment {
             @Override
             public void onClick(View v) {
                 getColorDialog();
-                textView1.setText("Color for 1:" + color);
+                select=1;
             }
         });
         color2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getColorDialog();
-                textView2.setText("Color for 2:" + color);
+                select=2;
             }
         });
         color3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getColorDialog();
-                textView3.setText("Color for 3:" + color);
+                select=3;
             }
         });
         color4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getColorDialog();
-                textView4.setText("Color for 4:" + color);
+                select=4;
             }
         });
         color5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getColorDialog();
-                textView5.setText("Color for 5:" + color);
+                select=5;
             }
         });
         color6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getColorDialog();
-                textView6.setText("Color for 6:" + color);
+                select=6;
             }
         });
 
@@ -118,6 +118,25 @@ public class Fragment_One extends Fragment {
                         // The 'which' argument contains the index position
                         // of the selected item
                         color[0] = which;
+                        if(select==1){
+                            textView1.setText("Color for 1:" + colors[which]);
+                        }
+                        if(select==2){
+                            textView2.setText("Color for 2:" + colors[which]);
+                        }
+                        if(select==3){
+                            textView3.setText("Color for 3:" + colors[which]);
+                        }
+                        if(select==4){
+                            textView4.setText("Color for 4:" + colors[which]);
+                        }
+                        if(select==5){
+                            textView5.setText("Color for 5:" + colors[which]);
+                        }
+                        if(select==6){
+                            textView6.setText("Color for 6:" + colors[which]);
+                        }
+                    select=0;
                     }
                 });
         builder.create();
@@ -178,37 +197,37 @@ public class Fragment_One extends Fragment {
 
     private int getColorWhich() {
         String sample = textView1.getText().toString();
-        if (sample.contains(":")) {
+        if (!sample.contains(":")) {
             return 0;
         }
         colorWhich[0] = sample.trim().split(":")[1];
 
         sample = textView2.getText().toString();
-        if (sample.contains(":")) {
+        if (!sample.contains(":")) {
             return 0;
         }
         colorWhich[1] = sample.trim().split(":")[1];
 
         sample = textView3.getText().toString();
-        if (sample.contains(":")) {
+        if (!sample.contains(":")) {
             return 0;
         }
         colorWhich[2] = sample.trim().split(":")[1];
 
         sample = textView4.getText().toString();
-        if (sample.contains(":")) {
+        if (!sample.contains(":")) {
             return 0;
         }
         colorWhich[3] = sample.trim().split(":")[1];
 
         sample = textView5.getText().toString();
-        if (sample.contains(":")) {
+        if (!sample.contains(":")) {
             return 0;
         }
         colorWhich[4] = sample.trim().split(":")[1];
 
         sample = textView6.getText().toString();
-        if (sample.contains(":")) {
+        if (!sample.contains(":")) {
             return 0;
         }
         colorWhich[5] = sample.trim().split(":")[1];

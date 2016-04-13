@@ -58,13 +58,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         holder.setDrawable(TextDrawable.builder()
                 .buildRound("" + title.toUpperCase().charAt(0), getRandomColor()));
         holder.setImage();
-        holder.view.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Log.d("Long Pressed On",""+reminders.get(position).getTitle());
-                return false;
-            }
-        });
+
     }
 
     public int getRandomColor(){
@@ -87,7 +81,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         return reminders.size();
     }
 
-    class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnCreateContextMenuListener{
+    class CustomViewHolder extends RecyclerView.ViewHolder{
         private View view;
         private TextView title;
         private TextView description;
@@ -103,8 +97,6 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             date=(TextView)itemView.findViewById(R.id.date);
             image = (ImageView) itemView.findViewById(R.id.image_view);
             itemView.setClickable(true);
-            itemView.setOnCreateContextMenuListener(this);
-            itemView.setOnClickListener(this);
         }
 
         public ImageView getImage() {
@@ -146,19 +138,5 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             this.date.setText(date);
         }
 
-        @Override
-        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-            new RecycleViewAdapter().info = menuInfo;
-            menu.setHeaderTitle(reminders.get(getLayoutPosition()).getTitle().toString().toUpperCase());
-            String[] menuItems = v.getResources().getStringArray(R.array.context_menu_reminder_options);
-            for (int i = 0; i < menuItems.length; i++) {
-                menu.add(Menu.NONE, i, i, menuItems[i]);
-            }
-        }
-
-        @Override
-        public void onClick(View v) {
-            Toast.makeText(RecycleViewAdapter.ctx,"you have clicked Row ", Toast.LENGTH_LONG).show();
-        }
     }
 }
