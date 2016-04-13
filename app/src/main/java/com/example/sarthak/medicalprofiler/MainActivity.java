@@ -1,19 +1,14 @@
 package com.example.sarthak.medicalprofiler;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-
-import com.example.sarthak.medicalprofiler.DatabaseClasses.ReminderDatabaseObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
         for(int i=0;i<3;i++) {
             tabs_create.setTabIcons(tabLayout,i,tabIcons[i]);
         }
+
+        SharedPreferences settings = getSharedPreferences("Med", MODE_PRIVATE);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.remove(Config.rbc);
+        editor.remove(Config.blood_pressure);
+        editor.remove(Config.body_temperature);
+        editor.remove(Config.hemoglobin);
+        editor.remove(Config.pulse);
+        editor.remove(Config.wbc);
+        editor.commit();
 
     }
 

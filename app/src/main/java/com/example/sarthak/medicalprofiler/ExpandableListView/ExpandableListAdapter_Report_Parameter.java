@@ -5,6 +5,7 @@ package com.example.sarthak.medicalprofiler.ExpandableListView;
  */
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
@@ -22,18 +24,19 @@ import com.example.sarthak.medicalprofiler.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExpandableListAdapter_Report_Parameter extends BaseExpandableListAdapter implements Filterable{
+public class ExpandableListAdapter_Report_Parameter extends BaseExpandableListAdapter implements Filterable {
 
     private Context _context;
     private List<String> _listDataHeader; // header titles
     private List<String> _fixedListDataHeader;
     private CustomFilterExpandableList filterExpandableList;
     private Button submit_report_parameter;
+    private EditText editText;
 
     public ExpandableListAdapter_Report_Parameter(Context context, List<String> listDataHeader) {
         this._context = context;
         this._listDataHeader = listDataHeader;
-        this._fixedListDataHeader=_listDataHeader;
+        this._fixedListDataHeader = _listDataHeader;
     }
 
     @Override
@@ -51,21 +54,45 @@ public class ExpandableListAdapter_Report_Parameter extends BaseExpandableListAd
                              boolean isLastChild, View convertView, ViewGroup parent) {
 
 
-
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = infalInflater.inflate(R.layout.report_parameter_input, null);
         }
 
-
+        editText = (EditText) convertView.findViewById(R.id.editText_input_parameter);
         /*Submit button functionality*/
-        submit_report_parameter=(Button) convertView.findViewById(R.id.input_parameter_submit_button);
+        submit_report_parameter = (Button) convertView.findViewById(R.id.input_parameter_submit_button);
         submit_report_parameter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String parent_name=getGroup(groupPosition).toString();
-                Toast.makeText(_context,parent_name,Toast.LENGTH_LONG).show();
+                String parent_name = getGroup(groupPosition).toString();
+                double value_param;
+                String value = editText.getText().toString();
+                if (value == null || value.isEmpty()) {
+                    Toast.makeText(_context, "Enter a value", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                try {
+                    value_param = Double.parseDouble(value);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(_context, "Enter a valid value", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                SharedPreferences sharedpreferences = _context.getSharedPreferences("Med", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                String isAlreadyPresent = sharedpreferences.getString(parent_name, "");
+                if (isAlreadyPresent == null || isAlreadyPresent.isEmpty() || isAlreadyPresent.equals("")) {
+                    Log.d("Save", "saved");
+                    editor.putString(parent_name, String.valueOf(value_param));
+                } else {
+                    Log.d("Save", "duplicate");
+                    editor.remove(parent_name);
+                    editor.putString(parent_name, String.valueOf(value_param));
+                }
+                editor.commit();
+                Toast.makeText(_context, sharedpreferences.getString(parent_name, ""), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -122,8 +149,8 @@ public class ExpandableListAdapter_Report_Parameter extends BaseExpandableListAd
 
     @Override
     public Filter getFilter() {
-        if(filterExpandableList==null){
-            filterExpandableList=new CustomFilterExpandableList();
+        if (filterExpandableList == null) {
+            filterExpandableList = new CustomFilterExpandableList();
         }
         return filterExpandableList;
     }
@@ -133,28 +160,28 @@ public class ExpandableListAdapter_Report_Parameter extends BaseExpandableListAd
 
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            FilterResults filterResults=new FilterResults();
+            FilterResults filterResults = new FilterResults();
 
-            if(constraint !=null && constraint.length()>0){
-                List<String> filtered_adapter_results=new ArrayList<String>();
-                int report_parameter_size=_fixedListDataHeader.size();
-                for(int i=0;i<report_parameter_size;i++){
-                    if(_fixedListDataHeader.get(i).contains(constraint)){
+            if (constraint != null && constraint.length() > 0) {
+                List<String> filtered_adapter_results = new ArrayList<String>();
+                int report_parameter_size = _fixedListDataHeader.size();
+                for (int i = 0; i < report_parameter_size; i++) {
+                    if (_fixedListDataHeader.get(i).contains(constraint)) {
                         filtered_adapter_results.add(_fixedListDataHeader.get(i));
                     }
                 }
-                filterResults.count=filtered_adapter_results.size();
-                filterResults.values=filtered_adapter_results;
-            }else{
-                filterResults.count=_fixedListDataHeader.size();
-                filterResults.values=_fixedListDataHeader;
+                filterResults.count = filtered_adapter_results.size();
+                filterResults.values = filtered_adapter_results;
+            } else {
+                filterResults.count = _fixedListDataHeader.size();
+                filterResults.values = _fixedListDataHeader;
             }
             return filterResults;
         }
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            _listDataHeader=(ArrayList<String>) results.values;
+            _listDataHeader = (ArrayList<String>) results.values;
             notifyDataSetChanged();
         }
     }
