@@ -130,4 +130,13 @@ public class Fragment_One extends Fragment {
         }
         return mColor;
     }
+     private void detectMood(){
+         final String colors[]={"Red","Blue","Brown","Yellow","Green"};
+         int []colorWhich;
+         /*
+         *
+         * colorWhich[0]-label1
+         *
+         * */
+     }
 }
