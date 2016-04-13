@@ -55,9 +55,6 @@ public class Add_Reminder extends AppCompatActivity {
         6-Sat
      */
     private CheckBox week_days[];
-    private int week_day_buttonIds[] = {R.id.day_sunday, R.id.day_monday,
-            R.id.day_tuesday, R.id.day_wednesday,
-            R.id.day_thursday, R.id.day_friday, R.id.day_saturday};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,9 +79,7 @@ public class Add_Reminder extends AppCompatActivity {
         });
 
 
-        week_days_buttons_layout = (LinearLayout) findViewById(R.id.week_days_buttons);
-        week_days_buttons_layout.setVisibility(View.GONE);
-        listView = (ListView) findViewById(R.id.listView_date_time_selector);
+       listView = (ListView) findViewById(R.id.listView_date_time_selector);
         adapter_listview = new Add_reminder_adapter(this, images, description, label);
         listView.setAdapter(adapter_listview);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -102,17 +97,6 @@ public class Add_Reminder extends AppCompatActivity {
                         break;
                     default:
                         break;
-                }
-            }
-        });
-        checkBox_repeat_alarm = (CheckBox) findViewById(R.id.checkbox_repeat_reminder);
-        checkBox_repeat_alarm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    week_days_buttons_layout.setVisibility(View.VISIBLE);
-                } else {
-                    week_days_buttons_layout.setVisibility(View.GONE);
                 }
             }
         });

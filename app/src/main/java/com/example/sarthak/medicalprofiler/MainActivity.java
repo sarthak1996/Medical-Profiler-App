@@ -31,20 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*Floating Action Button*/
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.Mapfab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Clicked on map", Snackbar.LENGTH_LONG)
-                        .setAction("Find Doctors near you", new View.OnClickListener(){
-                            @Override
-                            public void onClick(View v) {
-                                //Clicked on Find Doctors
-                            }
-                        }).show();
-            }
-        });
+
 
         /*Creating tabs*/
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
