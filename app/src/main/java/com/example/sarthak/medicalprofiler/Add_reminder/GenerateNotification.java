@@ -44,6 +44,8 @@ public class GenerateNotification extends Service {
             if(title==null || title.trim().equals("") || title.isEmpty()){
                 return 0;
             }
+        }else{
+            return 0;
         }
         notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
