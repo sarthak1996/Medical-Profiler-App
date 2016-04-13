@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -34,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*Creating tabs*/
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         FragmentClass tabs_create=new FragmentClass();
         tabs_create.setupViewPager(viewPager, getSupportFragmentManager());
@@ -45,10 +44,6 @@ public class MainActivity extends AppCompatActivity {
         for(int i=0;i<3;i++) {
             tabs_create.setTabIcons(tabLayout,i,tabIcons[i]);
         }
-
-
-
-
 
     }
 
@@ -68,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            AlertDialog.Builder alertDialog=new AlertDialog.Builder(MainActivity.this).
+                    setTitle("About Medi Pro")
+                    .setMessage("I was born for the sake of the medical electronics project assigned to my masters by Prof. Amit Sengupta.\n" +
+                            "I hope that my masters keep upgrading me and hope that they are awarded with nice marks because of me.:)");
+            alertDialog.show();
             return true;
         }
 
