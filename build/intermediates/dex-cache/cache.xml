@@ -1,2 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/sarthak/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="cce0823396aa693798f8882e64213b1772032b09">
+        <dex dex="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/pre-dexed/debug/guava-18.0_bb25b2e92b1f42f1f550f8771379943e14f36e84.jar" />
+    </item>
+    <item
+        jar="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="39ae02ce40c3ac828abbf780ce0ff5d7a28b7d6a">
+        <dex dex="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.0.1_f5bcccf2d30d4f21e14fe0d9097e5f4c663c5965.jar" />
+    </item>
+    <item
+        jar="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/exploded-aar/com.amulyakhare/com.amulyakhare.textdrawable/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d237556caead5b93d97e18a071059a2c0045978e">
+        <dex dex="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/pre-dexed/debug/com.amulyakhare-com.amulyakhare.textdrawable-1.0.1_ee13f2f0c7a912f8ae16599c03c0d00b336d989e.jar" />
+    </item>
+    <item
+        jar="/home/sarthak/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/pre-dexed/debug/support-annotations-23.3.0_37699aa2c928453d2ad1b85be1740a772c65ae4e.jar" />
+    </item>
+    <item
+        jar="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_ee5cb08dfee9e64aced1f74b624a3daa6f5df79f.jar" />
+    </item>
+    <item
+        jar="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/exploded-aar/com.github.satyan/sugar/1.4/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ac045b53684345f4ec8468477e8fc5034d0d2bfd">
+        <dex dex="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/pre-dexed/debug/com.github.satyan-sugar-1.4_fe6f7f7ce1041fedb067be2a9424e621161edf70.jar" />
+    </item>
+    <item
+        jar="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.3.0_eb980df24ad1763a6ec6ffe29ec21cf6cfb29545.jar" />
+    </item>
+    <item
+        jar="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.1.1_30576e5121eb630de69f5b911d11829ba2fa49ee.jar" />
+    </item>
+    <item
+        jar="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.3.0_4c6112bb5bcd09da48e10b7f2e39e8ecd39f6cf7.jar" />
+    </item>
+    <item
+        jar="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/home/sarthak/Desktop/Git_Project/Medical-Profiler-App/app/build/intermediates/pre-dexed/debug/internal_impl-23.3.0_acc05fb02f1509f88b72e80e5aae2cfa2bcf0163.jar" />
+    </item>
+
+</items>

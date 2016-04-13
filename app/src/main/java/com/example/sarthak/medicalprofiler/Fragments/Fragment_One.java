@@ -1,8 +1,6 @@
 package com.example.sarthak.medicalprofiler.Fragments;
 
 import android.content.DialogInterface;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -138,5 +136,16 @@ public class Fragment_One extends Fragment {
          * colorWhich[0]-label1
          *
          * */
+         if (colorWhich[0].equals("Red") && colorWhich[1].equals("Brown") && colorWhich[2].equals("Brown") && colorWhich[3].equals("Red") && colorWhich[4].equals("Blue") && colorWhich[5].equals("Brown")) {
+             //SAD
+         } else if (colorWhich[0].equals("Blue") && colorWhich[1].equals("Blue") && colorWhich[2].equals("Blue") && colorWhich[3].equals("Red") && colorWhich[4].equals("Blue") && colorWhich[5].equals("Blue")) {
+             //HAPPY
+         } else if (colorWhich[0].equals("Red") && colorWhich[1].equals("Red") && colorWhich[2].equals("Yellow") && colorWhich[3].equals("Yellow") && colorWhich[4].equals("Blue") && colorWhich[5].equals("Blue")) {
+             //HAPPY
+         } else if (colorWhich[0].equals("Blue") && colorWhich[1].equals("Blue") && colorWhich[2].equals("Brown") && colorWhich[3].equals("Red") && colorWhich[4].equals("Blue") && colorWhich[5].equals("Blue")) {
+             //ANGRY
+         } else {
+             //HAPPY
+         }
      }
 }
