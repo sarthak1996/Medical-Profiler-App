@@ -7,8 +7,6 @@
         android:layout_height="match_parent">
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/upperLayout"
@@ -54,15 +52,10 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Select color for 1"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:src="@android:color/holo_orange_dark"
+                        android:textSize="20sp"
                         android:id="@+id/image_view1"/>
+
+
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
@@ -89,15 +82,10 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Select color for 2"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:src="@android:color/holo_orange_dark"
+                        android:textSize="20sp"
                         android:id="@+id/image_view2"/>
+
+
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -123,15 +111,10 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Select color for 3"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:src="@android:color/holo_orange_dark"
+                        android:textSize="20sp"
                         android:id="@+id/image_view3"/>
+
+
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -157,15 +140,10 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Select color for 4"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:src="@android:color/holo_orange_dark"
+                        android:textSize="20sp"
                         android:id="@+id/image_view4"/>
+
+
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -192,15 +170,10 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Select color for 5"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:src="@android:color/holo_orange_dark"
+                        android:textSize="20sp"
                         android:id="@+id/image_view5"/>
+
+
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -227,14 +200,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Select color for 6"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:src="@android:color/holo_orange_dark"
+                        android:textSize="20sp"
                         android:id="@+id/image_view6"/>
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
@@ -248,5 +214,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
+        android:id="@+id/evaluateMood"
         android:src="@drawable/ic_done_white_24dp" />
 </RelativeLayout>
